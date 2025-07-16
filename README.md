@@ -4,12 +4,21 @@
 This project is a demo to-do application that allows users to capture and organize tasks efficiently. The application provides a simple interface for task management with project association capabilities.
 
 ## Technologies
-- **Frontend**: React
+- **Frontend**: React 18
 - **Database**: Supabase
 - **Authentication**: Supabase Auth (future consideration)
-- **Styling**: TBD
+- **Styling**: Tailwind CSS
+- **Build Tool**: Vite
 
 ## Core Features
+
+### ✅ Project Management
+- **Project List Display**: Grid layout showing project cards with progress tracking
+- **Search Functionality**: Filter projects by name and description
+- **Sorting Options**: Sort by name, date created, date updated, or task count
+- **Grid/List Toggle**: Switch between card grid and compact list view
+- **Create New Project**: Modal form for adding new projects
+- **Real-time Updates**: Live updates using Supabase subscriptions
 
 ### MVP Features
 1. **Task Management**
@@ -17,6 +26,7 @@ This project is a demo to-do application that allows users to capture and organi
    - Mark tasks as complete/incomplete
    - Delete tasks
    - View all tasks in a list
+   - Task due dates and priority levels
 
 2. **Project Association**
    - Associate tasks with projects
@@ -31,6 +41,8 @@ This project is a demo to-do application that allows users to capture and organi
 - `description` (text, optional)
 - `completed` (boolean, default: false)
 - `project_id` (UUID, foreign key)
+- `priority` (string, enum: low/medium/high)
+- `due_date` (date, optional)
 - `created_at` (timestamp)
 - `updated_at` (timestamp)
 
@@ -41,22 +53,13 @@ This project is a demo to-do application that allows users to capture and organi
 - `created_at` (timestamp)
 - `updated_at` (timestamp)
 
-## User Stories
-
-### As a user, I want to:
-1. Add new tasks so I can track what needs to be done
-2. Mark tasks as complete so I can track my progress
-3. Organize tasks by project so I can focus on specific areas
-4. View all my tasks in one place
-5. Delete tasks that are no longer relevant
-
 ## Technical Architecture
 
 ### Frontend (React)
 - Component-based architecture
 - State management for tasks and projects
 - API integration with Supabase
-- Responsive design
+- Responsive design with Tailwind CSS
 
 ### Backend (Supabase)
 - PostgreSQL database
@@ -84,7 +87,7 @@ cp .env.example .env.local
 # Add your Supabase URL and anon key
 
 # Start the development server
-npm start
+npm run dev
 ```
 
 ### Environment Variables
@@ -95,21 +98,22 @@ REACT_APP_SUPABASE_ANON_KEY=your_supabase_anon_key
 
 ## Development Roadmap
 
-### Phase 1: Core Functionality
-- [ ] Set up React application
-- [ ] Configure Supabase connection
-- [ ] Create database schema
-- [ ] Implement task CRUD operations
-- [ ] Basic UI for task management
+### Phase 1: Core Functionality ✅
+- [x] Set up React application
+- [x] Configure Supabase connection
+- [x] Create database schema
+- [x] Implement task CRUD operations
+- [x] Basic UI for task management
 
-### Phase 2: Project Management
-- [ ] Create project management system
-- [ ] Associate tasks with projects
-- [ ] Project filtering and organization
+### Phase 2: Project Management ✅
+- [x] Create project management system
+- [x] Associate tasks with projects
+- [x] Project filtering and organization
+- [x] Project list view with search and sorting
 
-### Phase 3: Enhanced Features
-- [ ] Task due dates
-- [ ] Priority levels
+### Phase 3: Enhanced Features ✅
+- [x] Task due dates
+- [x] Priority levels
 - [ ] Task categories/tags
 - [ ] Search functionality
 
